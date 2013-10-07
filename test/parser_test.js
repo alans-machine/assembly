@@ -14,4 +14,10 @@ describe('assembly parser', function(){
 
 	assert(result);
     });
+
+    it('should parse with definitions', function(){
+	var result = parser.parse('def successor s0,I,s0,I,R;s0,_,s1,I,L;s1,I,s1,I,L;s1,_,s2,_,R; end\n');
+
+	assert(result);
+    });
 });

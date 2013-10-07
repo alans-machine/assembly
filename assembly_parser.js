@@ -135,7 +135,7 @@ module.exports = (function(){
       }
       
       function parse_definition() {
-        var result0, result1, result2, result3, result4, result5, result6;
+        var result0, result1, result2, result3, result4, result5, result6, result7;
         var pos0;
         
         pos0 = pos;
@@ -163,6 +163,9 @@ module.exports = (function(){
             result2 = parse_identifier();
             if (result2 !== null) {
               result3 = parse_newline();
+              if (result3 === null) {
+                result3 = parse_space();
+              }
               if (result3 !== null) {
                 result5 = parse_statement();
                 if (result5 !== null) {
@@ -175,19 +178,26 @@ module.exports = (function(){
                   result4 = null;
                 }
                 if (result4 !== null) {
-                  if (input.substr(pos, 3) === "end") {
-                    result5 = "end";
-                    pos += 3;
-                  } else {
-                    result5 = null;
-                    if (reportFailures === 0) {
-                      matchFailed("\"end\"");
-                    }
-                  }
+                  result5 = parse_space();
+                  result5 = result5 !== null ? result5 : "";
                   if (result5 !== null) {
-                    result6 = parse_newline();
+                    if (input.substr(pos, 3) === "end") {
+                      result6 = "end";
+                      pos += 3;
+                    } else {
+                      result6 = null;
+                      if (reportFailures === 0) {
+                        matchFailed("\"end\"");
+                      }
+                    }
                     if (result6 !== null) {
-                      result0 = [result0, result1, result2, result3, result4, result5, result6];
+                      result7 = parse_newline();
+                      if (result7 !== null) {
+                        result0 = [result0, result1, result2, result3, result4, result5, result6, result7];
+                      } else {
+                        result0 = null;
+                        pos = pos0;
+                      }
                     } else {
                       result0 = null;
                       pos = pos0;

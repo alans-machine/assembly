@@ -1,6 +1,6 @@
 program = definitions:definition* statements:statement*
 
-definition = 'def' space+ identifier newline statements:statement+ 'end' newline
+definition = 'def' space+ identifier (newline / space) statements:statement+ space? 'end' newline
 
 identifier = characters:character+
 
