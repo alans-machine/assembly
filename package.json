@@ -5,7 +5,7 @@
   "main": "assembly_parser.js",
   "scripts": {
     "start": "./node_modules/.bin/pegjs grammar/assembly.peg assembly_parser.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha test/*_test.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "author": "Daan van Berkel",
   "license": "MIT",
   "dependencies": {
-    "pegjs": "~0.7.0"
+    "pegjs": "~0.7.0",
+    "mocha": "~1.13.0"
   }
 }
