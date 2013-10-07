@@ -3,26 +3,9 @@ assembly
 
 Assembly language parser for the Turing machine
 
-```peg
-program = definitions:definition* statements:statement*
+Language Specification
+----------------------
 
-definition = 'def' space+ identifier newline statements:statement+ 'end' newline
+The language specification for the Turing machine assembly is found in the [peg grammar][grammar].
 
-identifier = characters:character+
-
-character = [a-zA-Z0-9_]
-
-statement = current:state ',' read:symbol ',' next:state ',' write:symbol ',' move:direction ';' newline?
-
-state = 's' digits:digit+
-
-digit = [0-9]
-
-symbol = [a-zA-Z0-9_]
-
-direction = 'L' / 'R'
-
-space = ' '
-
-newline = '\n'
-```
+[grammar]: https://github.com/alans-machine/assembly/blob/master/grammar/assembly.peg
