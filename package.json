@@ -2,8 +2,9 @@
   "name": "assembly",
   "version": "0.0.0",
   "description": "Assembly language parser for the Turing machine",
-  "main": "index.js",
+  "main": "assembly_parser.js",
   "scripts": {
+    "start": "./node_modules/.bin/pegjs grammar/assembly.peg assembly_parser.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
