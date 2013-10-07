@@ -1,0 +1,21 @@
+{
+  "name": "assembly",
+  "version": "0.0.0",
+  "description": "Assembly language parser for the Turing machine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alans-machine/assembly.git"
+  },
+  "keywords": [
+    "turing",
+    "machine",
+    "assembly",
+    "parser"
+  ],
+  "author": "Daan van Berkel",
+  "license": "MIT"
+}
